@@ -1,0 +1,44 @@
+{
+  "name": "todo-cli",
+  "version": "1.0.0",
+  "description": "Interactive CLI for MCP Todo Server",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "todo": "./dist/index.js",
+    "todos": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "link": "npm run build && npm link",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todo",
+    "cli",
+    "mcp",
+    "interactive"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/inquirer": "^9.0.8",
+    "@types/node": "^22.15.27",
+    "boxen": "^8.0.1",
+    "chalk": "^5.4.1",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.0",
+    "date-fns": "^4.1.0",
+    "figlet": "^1.8.1",
+    "inquirer": "^12.6.3",
+    "node-fetch": "^3.3.2",
+    "ora": "^8.2.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0"
+  }
+}

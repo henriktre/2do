@@ -96,7 +96,108 @@ npm run dev         # Watch mode with automatic rebuilding
 npm run test        # Test the MCP server functionality
 npm run pocketbase  # Start PocketBase server
 npm run setup       # Build project and start PocketBase
+npm run web         # Start React web UI (requires PocketBase running)
+npm run cli         # Start CLI in development mode
+npm run cli:build   # Build the CLI application
+npm run cli:link    # Build and link CLI globally
+npm run dev:all     # Start both PocketBase and web UI simultaneously
+npm run build:all   # Build MCP server, web UI, and CLI
 ```
+
+## Command Line Interface
+
+A beautiful, interactive CLI for terminal-based todo management with rich colors, tables, and intuitive commands.
+
+### Features
+
+- 🎨 **Beautiful Terminal UI** - Rich colors, progress bars, and interactive prompts
+- ⚡ **Fast Commands** - Quick operations for power users
+- 🔄 **Interactive Mode** - Full menu-driven interface
+- 📊 **Rich Statistics** - Visual progress tracking and insights
+- 🔍 **Advanced Filtering** - Search by status, priority, tags, or text
+- 📅 **Due Date Management** - Track deadlines with overdue highlighting
+
+### Quick Start
+
+```bash
+# Build and link the CLI globally
+npm run cli:build
+cd cli && npm link
+
+# Now use anywhere on your system
+todo                    # Interactive mode
+todo list               # List all todos
+todo add "New task"     # Quick add
+todo stats              # Show statistics
+todo --help             # See all commands
+```
+
+### CLI Commands
+
+```bash
+# List and filter
+todo list                           # List all todos
+todo list --status pending         # Only pending
+todo list --priority high          # Only high priority
+todo list --table                  # Compact table view
+todo list --search "development"   # Search todos
+
+# Create todos
+todo add "Task title"               # Quick add
+todo add "Complex task" \
+  --description "Details here" \
+  --priority high \
+  --tags "work,urgent" \
+  --due 2025-06-15                  # Full options
+
+# Complete and manage
+todo complete "task"                # Mark as done
+todo delete "old task"              # Remove todo
+todo clear                          # Clear completed
+todo stats                          # Show statistics
+todo overdue                        # Show overdue items
+```
+
+## Web Interface
+
+In addition to the MCP server for Claude Desktop, this project includes a beautiful React web interface built with [Entur's Design System](https://linje.entur.no/).
+
+### Features
+
+- 🎨 **Modern UI** - Professional design components from Entur
+- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
+- ⚡ **Real-time Sync** - Shares the same database as the MCP server
+- 🔍 **Advanced Filtering** - Filter by status, priority, and search text
+- 📊 **Statistics Dashboard** - Visual overview of your todos
+- 🏷️ **Tags & Priorities** - Full support for all todo features
+
+### Quick Start
+
+```bash
+# Start everything at once
+npm run dev:all
+
+# Or start manually:
+# Terminal 1:
+npm run pocketbase
+
+# Terminal 2:
+npm run web
+```
+
+Then open `http://localhost:3000` in your browser.
+
+### Multiple Access Methods
+
+Your todos are accessible through:
+
+1. **Command Line** - `todo` CLI with rich terminal interface
+2. **Web UI** - `http://localhost:3000` (React interface)
+3. **MCP Server** - Claude Desktop integration
+4. **PocketBase Admin** - `http://localhost:8090/_/` (database admin)
+5. **Direct API** - REST endpoints at `http://localhost:8090/api/`
+
+All methods share the same database, so changes sync automatically across all interfaces!
 
 ## Available Tools
 
