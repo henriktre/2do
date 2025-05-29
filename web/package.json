@@ -1,0 +1,28 @@
+{
+  "name": "todo-web-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@entur/button": "^3.3.9",
+    "@entur/form": "^8.2.9",
+    "@entur/layout": "^3.1.5",
+    "@entur/tokens": "^3.19.1",
+    "@entur/typography": "^1.9.9",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
